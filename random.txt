@@ -1,0 +1,24 @@
+    CODE FOR FUNC 3
+
+    while (ptr != NULL) {
+        for (int i=0; i<strlen(ptr->text); i++) {
+            if (ptr->text[i] == keyword[0]) {
+                count = 1;
+                for (int j=1; j<strlen(keyword); j++) {
+                    if (ptr->text[i+j] == keyword[j]) {         //FIX ME need to fix for two letter words
+                        count += 1;
+                    }
+                }
+            }
+        }
+        if (count == strlen(keyword)) {
+            found = 1;
+            printf("Match found for '%s': %s wrote: '%s'\n", keyword, ptr->user, ptr->text);
+        }
+        ptr = ptr->next;
+    }
+    
+
+
+
+    
